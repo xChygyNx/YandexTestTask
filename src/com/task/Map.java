@@ -95,6 +95,15 @@ public class Map {
         System.out.print("\u001B[0m");
     }
 
+    public static void allDead(ArrayList<ArrayList<Integer>> map) {
+        for (int i = 0; i < map.size(); i++) {
+            if (map.get(i).contains(1)) {
+                return;
+            }
+        }
+        System.exit(0);
+    }
+
     private static Integer getRandomCell() {
         return ((int)(Math.random() * 2));
     }
