@@ -23,12 +23,6 @@ public class Main {
                 Usage.usage(NUMNEGATIVEERR);
             }
             map = Map.generateRandomMap(m, n);
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    System.out.printf("%d ", map.get(i).get(j));
-                }
-                System.out.println();
-            }
         } else {
             File file = new File(args[0]);
             if (!file.isFile()) {
@@ -36,12 +30,6 @@ public class Main {
             } else {
                 try {
                     map = Map.readMapFromFile(file);
-                    /*for (int i = 0; i < map.size(); i++){
-                        for (int j = 0; j < map.get(i).size(); j++) {
-                            System.out.printf("%d ",map.get(i).get(j));
-                        }
-                        System.out.println();
-                    }*/
                 } catch (Exception e) {
                     Usage.usage(FILEERR);
                 }
