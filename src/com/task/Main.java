@@ -11,6 +11,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> map = new ArrayList();
         if (args.length == 0) {
+            System.out.println ("Please, input count of rows and count of columns");
             Scanner scStdin = new Scanner(System.in);
             if (!scStdin.hasNextInt()) {
                 Usage.usage(NUMERR);
@@ -23,6 +24,7 @@ public class Main {
                 Usage.usage(NUMNEGATIVEERR);
             }
             map = Map.generateRandomMap(m, n);
+            scStdin.close();
         } else {
             File file = new File(args[0]);
             if (!file.isFile()) {
